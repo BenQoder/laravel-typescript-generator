@@ -1,12 +1,14 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace BenQoder\TypescriptGenerator;
 
+use Illuminate\Contracts\Http\Kernel;
 use Spatie\LaravelPackageTools\Package;
+use BenQoder\TypescriptGenerator\TypescriptGenerator;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use BenQoder\TypescriptGenerator\Commands\TypescriptGeneratorCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class TypescriptGeneratorServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +18,7 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->name('typescript-generator')
+            ->hasConfigFile();
     }
 }

@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
+    "name": "benqoder/laravel-typescript-generator",
     "description": ":package_description",
     "keywords": [
         ":vendor_name",
         "laravel",
         ":package_slug"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/benqoder/laravel-typescript-generator",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Adinnu Benedict",
+            "email": "benidixt@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "BenQoder\\TypescriptGenerator\\": "src",
+            "BenQoder\\TypescriptGenerator\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "BenQoder\\TypescriptGenerator\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "BenQoder\\TypescriptGenerator\\TypescriptGeneratorServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "TypescriptGenerator": "BenQoder\\TypescriptGenerator\\Facades\\TypescriptGenerator"
             }
         }
     },
