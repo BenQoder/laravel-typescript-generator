@@ -32,9 +32,13 @@ return [
 ```
 ## Usage
 
+Register Typescript generator middleware in kernel.php
 ```php
-$variable = new VendorName\Skeleton();
-echo $variable->echoPhrase('Hello, VendorName!');
+    protected $middleware = [
+        ...
+        \BenQoder\TypescriptGenerator\Middleware\TypescriptGenerator::class,
+    ];
+
 ```
 
 ## Testing
