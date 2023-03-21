@@ -1,10 +1,10 @@
 {
     "name": "benqoder/laravel-typescript-generator",
-    "description": ":package_description",
+    "description": "A laravel package to generate typescript interfaces from laravel responses using GPP-3.5",
     "keywords": [
-        ":vendor_name",
+        "BenQoder",
         "laravel",
-        ":package_slug"
+        "laravel-typescript-generator"
     ],
     "homepage": "https://github.com/benqoder/laravel-typescript-generator",
     "license": "MIT",
