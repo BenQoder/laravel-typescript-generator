@@ -12,7 +12,7 @@ This package for laravel converts your json responses to typescript types and in
 You can install the package via composer:
 
 ```bash
-composer require BenQoder/laravel-typescript-gen
+composer require benqoder/laravel-typescript-generator
 ```
 
 You can publish the config file with:
