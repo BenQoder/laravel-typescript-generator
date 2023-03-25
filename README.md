@@ -1,4 +1,4 @@
-# Convert Laravel JSON Renponses to Typescript interfaces usin GPT-3.5
+# Convert Laravel JSON Renponses to Typescript interfaces using GPT-3.5
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/BenQoder/laravel-typescript-gen.svg?style=flat-square)](https://packagist.org/packages/BenQoder/laravel-typescript-gen)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/BenQoder/laravel-typescript-gen/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/BenQoder/laravel-typescript-gen/actions?query=workflow%3Arun-tests+branch%3Amain)
