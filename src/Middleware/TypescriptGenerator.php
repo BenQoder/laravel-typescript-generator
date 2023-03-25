@@ -23,25 +23,25 @@ class TypescriptGenerator
             return $response;
         }
 
-        if (! str_contains($response->headers->get('Content-Type'), 'application/json')) {
+        if (!str_contains($response->headers->get('Content-Type'), 'application/json')) {
             return $response;
         }
 
         $filename = '';
 
-        if (! empty($request->route()->getName())) {
-            $filename = 'route - '.$request->route()->getName();
+        if (!empty($request->route()->getName())) {
+            $filename = 'route - ' . $request->route()->getName();
         }
 
         if (empty($filename)) {
-            $filename = 'path - '.str_replace('/', ':', $request->path());
+            $filename = 'path - ' . str_replace('/', ':', $request->path());
         }
 
         $outputPath = config('typescript-generator.output_path');
 
         File::ensureDirectoryExists(base_path("{$outputPath}/{$filename}"));
 
-        $filename = base_path("{$outputPath}/{$filename}/{$request->method()}.ts");
+        $filename = base_path("{$outputPath}/{$filename}/{$request->method()} - {$response->getStatusCode()}.ts");
 
         if (File::exists($filename)) {
             return $response;
@@ -50,14 +50,14 @@ class TypescriptGenerator
         $http = Http::withHeaders([
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer '.config('typescript-generator.openai_api_key'),
+            'Authorization' => 'Bearer ' . config('typescript-generator.openai_api_key'),
         ])->post(
             'https://api.openai.com/v1/chat/completions',
             [
                 'model' => 'gpt-3.5-turbo',
                 'messages' => [[
                     'role' => 'user',
-                    'content' => 'convert json '.json_encode($response->getContent()).' to typescript interface, do not include explanation, do not include examples, just the interface',
+                    'content' => 'convert json ' . json_encode($response->getContent()) . ' to typescript interface, do not include explanation, do not include examples, just the interface',
                 ]],
             ]
         );
